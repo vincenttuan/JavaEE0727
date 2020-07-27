@@ -20,10 +20,5 @@
         <url-pattern>/servlet/hello</url-pattern>
     </servlet-mapping>
     
-    <servlet-mapping>
-        <servlet-name>hello</servlet-name>
-        <url-pattern>/aaa/bbb</url-pattern>
-    </servlet-mapping>
-    
     
 </web-app>
