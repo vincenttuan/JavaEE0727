@@ -5,7 +5,7 @@
     <head>
         <link rel="SHORTCUT ICON" href="favicon.ico"> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>我的第一支JSP</title>
     </head>
     <body>
         <h1>
