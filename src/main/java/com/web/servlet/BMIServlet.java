@@ -27,6 +27,18 @@ public class BMIServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String h = req.getParameter("h");
+        String w = req.getParameter("w");
+        PrintWriter out = resp.getWriter();
+        out.print("doPost()... ");
+        if(h == null || w == null) {
+            out.print("Please input h, w !");
+            return;
+        }
+        double height = Double.parseDouble(h);
+        double weight = Double.parseDouble(w);
+        double bmiValue = weight / Math.pow(height/100, 2);
+        out.print(String.format("%.2f", bmiValue));
     }
 
     
