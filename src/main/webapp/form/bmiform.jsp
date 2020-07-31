@@ -12,12 +12,12 @@
         <title>JSP Page</title>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     </head>
-    <body>
-        <form class="pure-form" method="post" action="/servlet/bmi">
+    <body style="padding: 20px">
+        <form class="pure-form" method="post" action="/JavaWeb0727/servlet/bmi">
             <fieldset>
                 <legend>BMI Form</legend>
                 <input type="number" placeholder="請輸入身高" name="h" />
-                <input type="password" placeholder="請輸入體重" name="w" />
+                <input type="number" placeholder="請輸入體重" name="w" />
                 <button type="submit" class="pure-button pure-button-primary">計算 BMI</button>
             </fieldset>
         </form>
