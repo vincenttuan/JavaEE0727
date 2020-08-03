@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 // 電腦選號 Servlet
-@WebServlet(name = "lotto", urlPatterns = {"/servlet/lotto"})
+//@WebServlet(name = "lotto", urlPatterns = {"/servlet/lotto"})
+@WebServlet("/servlet/lotto")
 public class LottoServlet extends HttpServlet{
 
     @Override
@@ -22,10 +23,15 @@ public class LottoServlet extends HttpServlet{
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        // 1~49 取6組, 不可重複
+        // 1~49 取 n 組, 不可重複
+        // 取得 n 參數
+        String n = req.getParameter("n");
+        if(n == null) {
+            return;
+        }
         Set<Integer> set = new LinkedHashSet<>();
         Random r = new Random();
-        while(set.size() < 6) {
+        while(set.size() < Integer.parseInt(n)) {
             set.add(r.nextInt(49) + 1);
         }
         // 顯示在網頁上
