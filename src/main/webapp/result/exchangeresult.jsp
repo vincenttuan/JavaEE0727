@@ -38,13 +38,14 @@
                         %>
                             <tr>
                                 <td><%=key %></td>
-                                <td><%=value %></td>
+                                <td align="right"><%=String.format("$ %,.2f", value) %></td>
                             </tr>
                         <%
                             }
                         %>
                     </tbody>
                 </table>
+                <p />
                 <button type="submit" class="pure-button pure-button-primary">Back</button>
             </fieldset>
         </form>
