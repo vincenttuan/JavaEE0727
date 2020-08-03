@@ -12,14 +12,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Exchange Form</title>
     </head>
-    <body>
+    <body style="padding: 15px">
         <form class="pure-form" method="post" action="/JavaWeb0727/servlet/exchange">
             <fieldset>
                 <legend>Exchange Form</legend>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="number" name="money" placeholder="請輸入金額(台幣)" />
+                <p />
                 <label for="default-remember">
-                    <input type="checkbox" id="default-remember" />Remember me</label>
+                    <input type="checkbox" id="default-remember" name="currency" value="USD" />USD
+                    <input type="checkbox" id="default-remember" name="currency" value="JPY" />JPY
+                    <input type="checkbox" id="default-remember" name="currency" value="EUR" />EUR
+                    <input type="checkbox" id="default-remember" name="currency" value="CNY" />CNY
+                </label>
+                <p />
                 <button type="submit" class="pure-button pure-button-primary">Sign in</button>
             </fieldset>
         </form>
