@@ -9,9 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Exchange Form</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Exchange Form</h1>
+        <form method="post" action="/JavaWeb0727/servlet/exchange">
+            <input type="submit">
+        </form>
     </body>
 </html>
