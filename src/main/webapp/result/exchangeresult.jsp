@@ -11,7 +11,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Exchange Result</title>
     </head>
-    <body>
-        <h1>Exchange Result</h1>
+    <body style="padding: 15px">
+        <form class="pure-form" method="get" action="/JavaWeb0727/form/exchangeform.jsp">
+            <fieldset>
+                <legend>Exchange Result</legend>
+                台幣:
+                <p />
+                換匯結果:
+                <p />
+                <button type="submit" class="pure-button pure-button-primary">Back</button>
+            </fieldset>
+        </form>
     </body>
 </html>

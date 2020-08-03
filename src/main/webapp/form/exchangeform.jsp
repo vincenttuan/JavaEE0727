@@ -25,7 +25,7 @@
                     <input type="checkbox" id="default-remember" name="currency" value="CNY" />CNY
                 </label>
                 <p />
-                <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+                <button type="submit" class="pure-button pure-button-primary">Submit</button>
             </fieldset>
         </form>
     </body>
