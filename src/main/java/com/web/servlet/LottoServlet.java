@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 // 電腦選號 Servlet
 @WebServlet(name = "lotto", 
             urlPatterns = {"/servlet/lotto"},
-            initParams = {@WebInitParam(name = "n", value = "6")})
+            initParams = {@WebInitParam(name = "n", value = "6"),
+                          @WebInitParam(name = "range", value = "49")})
 //@WebServlet("/servlet/lotto")
 public class LottoServlet extends HttpServlet{
 
@@ -29,13 +30,14 @@ public class LottoServlet extends HttpServlet{
         // 1~49 取 n 組, 不可重複
         // 取得 n 參數
         String n = req.getParameter("n");
+        int range = Integer.parseInt(getInitParameter("range"));
         if(n == null) {
             n = getInitParameter("n");
         }
         Set<Integer> set = new LinkedHashSet<>();
         Random r = new Random();
         while(set.size() < Integer.parseInt(n)) {
-            set.add(r.nextInt(49) + 1);
+            set.add(r.nextInt(range) + 1);
         }
         // 顯示在網頁上
         PrintWriter out = resp.getWriter();
