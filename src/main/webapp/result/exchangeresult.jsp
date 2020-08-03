@@ -4,6 +4,8 @@
     Author     : teacher
 --%>
 
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,10 +18,33 @@
         <form class="pure-form" method="get" action="/JavaWeb0727/form/exchangeform.jsp">
             <fieldset>
                 <legend>Exchange Result</legend>
-                台幣:<%=request.getAttribute("money") %>
+                台幣:<%=request.getAttribute("money")%>
                 <p />
-                換匯結果:<%=request.getAttribute("list") %>
+                換匯結果:<%=request.getAttribute("list")%>
                 <p />
+                <table class="pure-table pure-table-bordered">
+                    <thead>
+                        <tr>
+                            <th>幣別</th>
+                            <th>換匯結果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            List<Map<String, Double>> list = (List)request.getAttribute("list");
+                            for(Map<String, Double> map : list) {
+                                String key = map.keySet().iterator().next();
+                                Double value = map.get(key);
+                        %>
+                            <tr>
+                                <td><%=key %></td>
+                                <td><%=value %></td>
+                            </tr>
+                        <%
+                            }
+                        %>
+                    </tbody>
+                </table>
                 <button type="submit" class="pure-button pure-button-primary">Back</button>
             </fieldset>
         </form>
