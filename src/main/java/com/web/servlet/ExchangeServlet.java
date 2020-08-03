@@ -37,6 +37,9 @@ public class ExchangeServlet extends HttpServlet {
         System.out.println(list);
         // 將 Servlet 的計算結果分派/重導
         RequestDispatcher rd = req.getRequestDispatcher("/result/exchangeresult.jsp");
+        // 將參數傳給 jsp page
+        req.setAttribute("money", money);
+        req.setAttribute("list", list);
         rd.forward(req, resp);
 
     }

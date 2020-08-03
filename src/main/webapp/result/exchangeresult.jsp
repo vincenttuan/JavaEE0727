@@ -16,9 +16,9 @@
         <form class="pure-form" method="get" action="/JavaWeb0727/form/exchangeform.jsp">
             <fieldset>
                 <legend>Exchange Result</legend>
-                台幣:
+                台幣:<%=request.getAttribute("money") %>
                 <p />
-                換匯結果:
+                換匯結果:<%=request.getAttribute("list") %>
                 <p />
                 <button type="submit" class="pure-button pure-button-primary">Back</button>
             </fieldset>
