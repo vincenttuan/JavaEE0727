@@ -12,7 +12,6 @@
             <fieldset>
                 <legend>Upload Form (enctype="multipart/form-data")</legend>
                 <input type="file" name="myfile1" /><p>
-                <input type="file" name="myfile1" /><p>
                 <input type="text" name="desc1" /><p>
                 <button type="submit" class="pure-button pure-button-primary">上傳</button>
             </fieldset>

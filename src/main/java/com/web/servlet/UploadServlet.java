@@ -31,8 +31,13 @@ public class UploadServlet extends HttpServlet {
                 .filter(part -> part.getName().equals("myfile1"))
                 .forEach(part -> {
                     try {
-                        part.write(part.getSubmittedFileName());
-                        out.print(part.getSubmittedFileName() + " Upload OK !");
+                        String fname = part.getSubmittedFileName();
+                        part.write(fname);
+                        out.print(fname + " Upload OK !");
+                        // 圖片
+                        String imagePath = "/JavaWeb0727/servlet/image?fname=" + fname;
+                        out.println(String.format("<p><img width='150' src='%s'>", imagePath));
+
                     } catch (Exception e) {
                     }
                 });
@@ -47,8 +52,6 @@ public class UploadServlet extends HttpServlet {
                     }
                 });
         
-        // 圖片
-        out.println("<p><img width='150' src='https://lh4.ggpht.com/-AszOYDCZ6Wk/U8Te1rwFrtI/AAAAAAAA0DY/xKyn7FyM_yw/gee-bee-model-r-2%25255B6%25255D.jpg'>");
     }
     
 }
