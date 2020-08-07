@@ -1,6 +1,9 @@
 package com.web.servlet;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +18,16 @@ public class StreamServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
         
+        PrintWriter out = resp.getWriter();
+        
+        InputStream is = req.getInputStream();
+        InputStreamReader isr = new InputStreamReader(is);
+        char[] buffer = new char[1];
+        while (isr.read(buffer) != -1) {
+            String s = new String(buffer);
+            out.print(s);
+            out.flush();
+        }
     }
     
     @Override
