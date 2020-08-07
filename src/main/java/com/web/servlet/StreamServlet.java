@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,14 @@ public class StreamServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         
         PrintWriter out = resp.getWriter();
-        
+        // 檢視 HTTP part 2
+        Enumeration<String> e = req.getHeaderNames();
+        while (e.hasMoreElements()) {
+            String name = e.nextElement();
+            String value = req.getHeader(name);
+            out.println(name + ":" + value);
+        }
+        out.println("<hr>");
         // 檢視 HTTP part 4
         InputStream is = req.getInputStream();
         InputStreamReader isr = new InputStreamReader(is);
