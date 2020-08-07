@@ -35,7 +35,7 @@ public class StreamServlet extends HttpServlet {
         while (isr.read(buffer) != -1) {
             String s = new String(buffer);
             out.print(s);
-            out.flush();
+            //out.flush();
         }
     }
     

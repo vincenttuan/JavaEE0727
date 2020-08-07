@@ -36,5 +36,14 @@
                 <button type="submit" class="pure-button pure-button-primary">傳送</button>
             </fieldset>
         </form>
+        <form class="pure-form" 
+              enctype="multipart/form-data"
+              method="post" action="/JavaWeb0727/servlet/stream">
+            <fieldset>
+                <legend>Upload Form (enctype="multipart/form-data")</legend>
+                <input type="file" name="myfile" />
+                <button type="submit" class="pure-button pure-button-primary">上傳</button>
+            </fieldset>
+        </form>
     </body>
 </html>
