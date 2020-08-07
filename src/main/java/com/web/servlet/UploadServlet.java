@@ -2,12 +2,14 @@ package com.web.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.io.IOUtils;
 
 @WebServlet(urlPatterns = {"/servlet/upload"})
 @MultipartConfig(
@@ -24,7 +26,7 @@ public class UploadServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        // 分析 part (name=file)
+        // 分析 part (name=myfile1)
         req.getParts().stream()
                 .filter(part -> part.getName().equals("myfile1"))
                 .forEach(part -> {
@@ -34,7 +36,16 @@ public class UploadServlet extends HttpServlet {
                     } catch (Exception e) {
                     }
                 });
-        
+        // 分析 part (name=desc1)
+        req.getParts().stream()
+                .filter(part -> part.getName().equals("desc1"))
+                .forEach(part -> {
+                    try {
+                        String desc = IOUtils.toString(part.getInputStream(), StandardCharsets.UTF_8.name());
+                        out.print(desc);
+                    } catch (Exception e) {
+                    }
+                });
     }
     
 }
