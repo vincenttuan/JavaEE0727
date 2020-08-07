@@ -41,7 +41,8 @@
               method="post" action="/JavaWeb0727/servlet/stream">
             <fieldset>
                 <legend>Upload Form (enctype="multipart/form-data")</legend>
-                <input type="file" name="myfile" />
+                <input type="file" name="myfile1" />
+                <input type="file" name="myfile2" />
                 <button type="submit" class="pure-button pure-button-primary">上傳</button>
             </fieldset>
         </form>
