@@ -20,7 +20,7 @@ public class ImageServlet extends HttpServlet {
         File file = new File("c:/upload/" + fname);
         System.out.println(file.length());
         
-        resp.setContentType("image/jpeg");
+        resp.setContentType("image/*");
         resp.setContentLength((int)file.length());
         
         ServletOutputStream out = resp.getOutputStream();
