@@ -8,10 +8,11 @@
     <body style="padding: 20px">
         <form class="pure-form" 
               enctype="multipart/form-data"
-              method="post" action="/JavaWeb0727/servlet/stream">
+              method="post" action="/JavaWeb0727/servlet/upload">
             <fieldset>
                 <legend>Upload Form (enctype="multipart/form-data")</legend>
-                <input type="file" name="myfile1" />
+                <input type="file" name="myfile1" /><p>
+                <input type="text" name="desc1" /><p>
                 <button type="submit" class="pure-button pure-button-primary">上傳</button>
             </fieldset>
         </form>
