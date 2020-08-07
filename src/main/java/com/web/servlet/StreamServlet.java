@@ -20,6 +20,7 @@ public class StreamServlet extends HttpServlet {
         
         PrintWriter out = resp.getWriter();
         
+        // 檢視 HTTP part 4
         InputStream is = req.getInputStream();
         InputStreamReader isr = new InputStreamReader(is);
         char[] buffer = new char[1];
