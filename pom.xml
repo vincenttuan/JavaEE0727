@@ -18,7 +18,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>7.0</version>
+            <version>8.0.1</version>
             <scope>provided</scope>
         </dependency>
         
@@ -27,6 +27,13 @@
             <artifactId>YahooFinanceAPI</artifactId>
             <version>3.15.0</version>
         </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>javax.servlet.jsp.jstl</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        
     </dependencies>
 
     <build>
