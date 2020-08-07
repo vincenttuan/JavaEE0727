@@ -46,6 +46,9 @@ public class UploadServlet extends HttpServlet {
                     } catch (Exception e) {
                     }
                 });
+        
+        // 圖片
+        out.println("<p><img width='150' src='https://lh4.ggpht.com/-AszOYDCZ6Wk/U8Te1rwFrtI/AAAAAAAA0DY/xKyn7FyM_yw/gee-bee-model-r-2%25255B6%25255D.jpg'>");
     }
     
 }
