@@ -28,6 +28,12 @@ public class ReportServlet extends HttpServlet {
         rd = getServletContext().getRequestDispatcher(headPath);
         rd.include(req, resp);
         
+        rd = getServletContext().getRequestDispatcher(part2Path);
+        rd.include(req, resp);
+
+        rd = getServletContext().getRequestDispatcher(part3Path);
+        rd.include(req, resp);
+
         rd = getServletContext().getRequestDispatcher(part1Path);
         rd.include(req, resp);
         
