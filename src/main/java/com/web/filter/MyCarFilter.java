@@ -14,8 +14,13 @@ public class MyCarFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-        PrintWriter out = res.getWriter();
-        out.print("GG");
+        int age = Integer.parseInt(req.getParameter("age"));
+        if(age >= 18) {
+            chain.doFilter(req, res);
+        } else {
+            PrintWriter out = res.getWriter();
+            out.print("GG");
+        }
     }
     
 }
