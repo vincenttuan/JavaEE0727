@@ -16,7 +16,7 @@ public class SendRedirectServlet extends HttpServlet {
         
         int n = new Random().nextInt(100);
         if(n % 2 == 0) {
-            resp.sendRedirect("https://tw.yahoo.com");
+            resp.sendRedirect("https://tw.yahoo.com/");
         } else {
             getServletContext().getRequestDispatcher("/index.html").forward(req, resp);
         }
