@@ -10,7 +10,7 @@ import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter("/secure/mycar/*")
+@WebFilter("/secure/mycar/car.jpg")
 public class MyCarFilter extends HttpFilter {
 
     @Override
@@ -25,6 +25,7 @@ public class MyCarFilter extends HttpFilter {
                 chain.doFilter(req, res);
             }
         } catch (Exception e) {
+            //res.sendRedirect("/JavaWeb0727/form/mycarform.jsp");
             rd.forward(req, res);
         }
         
