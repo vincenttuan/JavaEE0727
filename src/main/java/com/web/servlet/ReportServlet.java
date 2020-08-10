@@ -1,5 +1,9 @@
 package com.web.servlet;
 
-public class ReportServlet {
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/servlet/report")
+public class ReportServlet extends HttpServlet {
     
 }
