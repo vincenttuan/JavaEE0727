@@ -14,12 +14,18 @@ public class MyCarFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-        int age = Integer.parseInt(req.getParameter("age"));
-        if(age >= 18) {
-            chain.doFilter(req, res);
-        } else {
+        //int age = Integer.parseInt(req.getParameter("age"));
+        String age = req.getParameter("age");
+        try {
+            if(age == null || Integer.parseInt(age) < 18) {
+                res.sendRedirect("/form/mycarform.jsp");
+            } else {
+                chain.doFilter(req, res);
+            }
+        } catch (Exception e) {
             res.sendRedirect("/form/mycarform.jsp");
         }
+        
     }
     
 }
