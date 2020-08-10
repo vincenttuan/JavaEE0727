@@ -18,8 +18,7 @@ public class MyCarFilter extends HttpFilter {
         if(age >= 18) {
             chain.doFilter(req, res);
         } else {
-            PrintWriter out = res.getWriter();
-            out.print("GG");
+            res.sendRedirect("/form/mycarform.jsp");
         }
     }
     
