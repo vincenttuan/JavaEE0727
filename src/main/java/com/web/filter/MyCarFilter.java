@@ -18,7 +18,7 @@ public class MyCarFilter extends HttpFilter {
         String age = req.getParameter("age");
         try {
             if(age == null || Integer.parseInt(age) < 18) {
-                res.sendRedirect("/form/mycarform.jsp");
+                res.sendRedirect("/JavaWeb0727/form/mycarform.jsp");
             } else {
                 chain.doFilter(req, res);
             }
