@@ -23,7 +23,7 @@ public class MyCarFilter extends HttpFilter {
                 chain.doFilter(req, res);
             }
         } catch (Exception e) {
-            res.sendRedirect("/form/mycarform.jsp");
+            res.sendRedirect("/JavaWeb0727/form/mycarform.jsp");
         }
         
     }
