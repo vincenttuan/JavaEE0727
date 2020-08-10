@@ -25,7 +25,7 @@ public class IncludeForwardServlet extends HttpServlet {
         rd.include(req, resp);
         
         PrintWriter out = resp.getWriter();
-        out.print("Finish");
+        out.print("Servlet: " + req.getAttribute("sum"));
     }
     
 }
