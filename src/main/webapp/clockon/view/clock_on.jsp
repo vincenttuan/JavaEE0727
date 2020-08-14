@@ -22,6 +22,11 @@
                     </form>
                 </td> 
             </tr>
+            <tr>
+                <td>
+                    <%=request.getAttribute("logs") %>
+                </td>
+            </tr>
         </table>
     </ceter>
 </body>

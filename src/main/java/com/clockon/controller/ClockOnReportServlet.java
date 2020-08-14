@@ -2,6 +2,9 @@ package com.clockon.controller;
 
 import com.clockon.model.ClockOnModel;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,8 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 public class ClockOnReportServlet extends HttpServlet{
     private ClockOnModel model = new ClockOnModel();
     protected void doHandler(String no, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=utf-8");
-        resp.getWriter().print(model.queryClockOn(no));
+        List<Map<String, String>> logs = model.queryClockOn(no);
+        req.setAttribute("logs", logs);
+        // 重導到 clock_on.jsp
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/clockon/view/clock_on.jsp");
+        rd.forward(req, resp);
+        
     }
 
     @Override
