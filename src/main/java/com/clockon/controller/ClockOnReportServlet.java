@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ClockOnReportServlet extends HttpServlet{
     private ClockOnModel model = new ClockOnModel();
     protected void doHandler(String no, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=utf-8");
         resp.getWriter().print(model.queryClockOn(no));
     }
 
