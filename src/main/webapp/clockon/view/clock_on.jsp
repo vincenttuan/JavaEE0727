@@ -44,7 +44,7 @@
                                     for (Map<String, String> map : list) {
                                         out.print("<tr>");
                                         out.print("<td>" + map.get("no") + "</td>");
-                                        out.print("<td>" + map.get("image") + "</td>");
+                                        out.print("<td><img src='" + map.get("image") + "' width='100'></td>");
                                         out.print("<td>" + map.get("time") + "</td>");
                                         out.print("</tr>");
                                     }
