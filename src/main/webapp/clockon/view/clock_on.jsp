@@ -1,3 +1,5 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
@@ -34,9 +36,12 @@
                         </thead>
                         <tbody>
                         <%
-                            Object list = request.getAttribute("logs");
-                            if (list != null) {
-                                
+                            Object obj = request.getAttribute("logs");
+                            if (obj != null) {
+                                List<Map<String, String>> list = (List<Map<String, String>>)obj;
+                                for(Map<String, String> map : list) {
+                                    
+                                }
                             }
                         %>
                         </tbody>
