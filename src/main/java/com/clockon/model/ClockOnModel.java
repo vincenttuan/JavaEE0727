@@ -28,4 +28,22 @@ public class ClockOnModel {
         log.put("no", "000");
         log.put("time", new Date().toString());
     }
+    
+    // 打卡
+    public boolean clockOn(String no) {
+        boolean exist = employees.stream()
+                .filter(map -> map.get("no").equals(no))
+                .findFirst()
+                .isPresent();
+        if(exist) {
+            Map<String, String> log = new LinkedHashMap<>();
+            log.put("no", no);
+            log.put("time", new Date().toString());
+            clockOnlogs.add(log);
+        }
+        return exist;
+    }
+    
+    
+    
 }
