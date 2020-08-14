@@ -15,7 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 public class ClockOnReportServlet extends HttpServlet{
     private ClockOnModel model = new ClockOnModel();
     protected void doHandler(String no, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Map<String, String>> logs = model.queryClockOn(no);
+        List<Map<String, String>> logs = null;
+        if(no.equalsIgnoreCase("all")) {
+            logs = model.queryClockOn();
+        } else {
+            logs = model.queryClockOn(no);
+        }
         req.setAttribute("logs", logs);
         // 重導到 clock_on.jsp
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/clockon/view/clock_on.jsp");
