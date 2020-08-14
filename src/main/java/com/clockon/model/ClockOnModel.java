@@ -32,7 +32,7 @@ public class ClockOnModel {
     }
     
     // 打卡
-    public boolean clockOn(String no) {
+    public boolean clockOn(String no, String image) {
         boolean exist = employees.stream()
                 .filter(map -> map.get("no").equals(no))
                 .findFirst()
@@ -40,6 +40,7 @@ public class ClockOnModel {
         if(exist) {
             Map<String, String> log = new LinkedHashMap<>();
             log.put("no", no);
+            log.put("image", image);
             log.put("time", new Date().toString());
             clockOnlogs.add(log);
         }
