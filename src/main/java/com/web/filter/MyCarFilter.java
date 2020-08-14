@@ -10,7 +10,7 @@ import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter("/secure/mycar/car.jpg")
+@WebFilter("/secure/mycar/*")
 public class MyCarFilter extends HttpFilter {
 
     @Override
