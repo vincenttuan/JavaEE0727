@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import static java.util.stream.Collectors.toList;
 
 public class ClockOnModel {
     public static List<Map<String, String>> employees;   // 員工資料
@@ -44,6 +45,18 @@ public class ClockOnModel {
         return exist;
     }
     
+    // 查詢
+    public List<Map<String, String>> queryClockOn(String no) {
+        return clockOnlogs.stream()
+                .filter(map -> map.get("no").equals(no))
+                .collect(toList());
+    }
+    
+    // 查詢
+    public List<Map<String, String>> queryClockOn() {
+        return clockOnlogs.stream()
+                .collect(toList());
+    }
     
     
 }
