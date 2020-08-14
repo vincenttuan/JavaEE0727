@@ -18,10 +18,10 @@
                             <video id="player" width="320" height="240" controls autoplay></video>
                             <p />
                             <input type="text" id="no" name="no" placeholder="請輸入員工編號" />
-                            <input type="text" id="image" name="image" />
+                            <input type="hidden" id="image" name="image" />
                             <p />
                             <button id="signInBtn" type="submit" class="pure-button pure-button-primary">打卡</button>
-                            <button type="button" class="pure-button pure-button-primary">查詢</button>
+                            <button id="queryBtn" type="button" class="pure-button pure-button-primary">查詢</button>
                         </fieldset>
                     </form>
                 </td> 
@@ -60,6 +60,12 @@
     <script>
         var player = document.getElementById('player');
         var snapshotCanvas = document.getElementById('snapshot');
+        
+        queryBtn.addEventListener('click', function () {
+            var no = document.getElementById("no").value;
+            window.location.href = '/JavaWeb0727/controller/clockonreport?no=' + no;
+        });
+        
         signInBtn.addEventListener('click', function () {
             var context = snapshot.getContext('2d');
             // Draw the video frame to the canvas.
