@@ -24,7 +24,23 @@
             </tr>
             <tr>
                 <td>
-                    <%=request.getAttribute("logs") %>
+                    <table class="pure-table pure-table-bordered">
+                        <thead>
+                            <tr>
+                                <th>no</th>
+                                <th>image</th>
+                                <th>time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <%
+                            Object list = request.getAttribute("logs");
+                            if (list != null) {
+                                
+                            }
+                        %>
+                        </tbody>
+                    </table>
                 </td>
             </tr>
         </table>
