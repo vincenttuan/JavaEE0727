@@ -15,6 +15,8 @@
                     <form class="pure-form" method="post" action="/JavaWeb0727/controller/clockon">
                         <fieldset>
                             <legend>打卡系統 Clock on</legend>
+                            <video id="player" width="320" height="240" controls autoplay></video>
+                            <p />
                             <input type="text" id="no" name="no" placeholder="請輸入員工編號" />
                             <input type="text" id="image" name="image" />
                             <p />
@@ -35,24 +37,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <%
-                            Object obj = request.getAttribute("logs");
-                            if (obj != null) {
-                                List<Map<String, String>> list = (List<Map<String, String>>)obj;
-                                for(Map<String, String> map : list) {
-                                    out.print("<tr>");
-                                    out.print("<td>" + map.get("no") + "</td>");
-                                    out.print("<td>" + map.get("image") + "</td>");
-                                    out.print("<td>" + map.get("time") + "</td>");
-                                    out.print("</tr>");
+                            <%
+                                Object obj = request.getAttribute("logs");
+                                if (obj != null) {
+                                    List<Map<String, String>> list = (List<Map<String, String>>) obj;
+                                    for (Map<String, String> map : list) {
+                                        out.print("<tr>");
+                                        out.print("<td>" + map.get("no") + "</td>");
+                                        out.print("<td>" + map.get("image") + "</td>");
+                                        out.print("<td>" + map.get("time") + "</td>");
+                                        out.print("</tr>");
+                                    }
                                 }
-                            }
-                        %>
+                            %>
                         </tbody>
                     </table>
                 </td>
             </tr>
         </table>
     </ceter>
+    <script>
+        var player = document.getElementById('player');
+        var handleSuccess = function (stream) {
+            player.srcObject = stream;
+        };
+        navigator.mediaDevices.getUserMedia({video: true})
+                    .then(handleSuccess);
+    </script>                        
 </body>
 </html>
