@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/controller/clockon")
 public class ClockOnServlet extends HttpServlet {
-    private ClockOnModel model;
+    private ClockOnModel model = new ClockOnModel();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String image = req.getParameter("image");

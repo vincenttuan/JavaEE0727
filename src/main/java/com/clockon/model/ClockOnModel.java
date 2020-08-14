@@ -23,6 +23,7 @@ public class ClockOnModel {
         emp3.put("no", "000");
         employees.add(emp1);
         employees.add(emp2);
+        employees.add(emp3);
         
         clockOnlogs = new ArrayList<>();
         Map<String, String> log = new LinkedHashMap<>();
