@@ -27,6 +27,7 @@ public class ClockOnModel {
         clockOnlogs = new ArrayList<>();
         Map<String, String> log = new LinkedHashMap<>();
         log.put("no", "000");
+        log.put("image", "");
         log.put("time", new Date().toString());
     }
     
