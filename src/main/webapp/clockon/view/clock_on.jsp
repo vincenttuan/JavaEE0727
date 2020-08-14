@@ -20,7 +20,7 @@
                             <input type="text" id="no" name="no" placeholder="請輸入員工編號" />
                             <input type="text" id="image" name="image" />
                             <p />
-                            <button type="submit" class="pure-button pure-button-primary">打卡</button>
+                            <button id="signInBtn" type="submit" class="pure-button pure-button-primary">打卡</button>
                             <button type="button" class="pure-button pure-button-primary">查詢</button>
                         </fieldset>
                     </form>
@@ -56,13 +56,25 @@
             </tr>
         </table>
     </ceter>
+    <canvas id="snapshot" width="320" height="240" style="visibility: hidden"></canvas>
     <script>
         var player = document.getElementById('player');
+        var snapshotCanvas = document.getElementById('snapshot');
+        signInBtn.addEventListener('click', function () {
+            var context = snapshot.getContext('2d');
+            // Draw the video frame to the canvas.
+            context.drawImage(player, 0, 0, snapshotCanvas.width,
+                    snapshotCanvas.height);
+            var base64 = snapshotCanvas.toDataURL();
+            console.log(base64);
+            document.getElementById("image").value = base64;
+            //document.getElementById("signInForm").submit();
+        });
         var handleSuccess = function (stream) {
             player.srcObject = stream;
         };
         navigator.mediaDevices.getUserMedia({video: true})
-                    .then(handleSuccess);
+                .then(handleSuccess);
     </script>                        
 </body>
 </html>
