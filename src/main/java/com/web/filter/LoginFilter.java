@@ -22,13 +22,17 @@ public class LoginFilter extends HttpFilter {
             Cookie cookie = new Cookie("email", email); // 建立 Cookie 物件
             cookie.setMaxAge(30); // 存續時間
             res.addCookie(cookie); // 加入到 response 物件
+        } else {
+            Cookie cookie = new Cookie("email", ""); // 建立 Cookie 物件
+            cookie.setMaxAge(1); // 存續時間
+            res.addCookie(cookie);
         }
         if(email.contains("admin")) {
             chain.doFilter(req, res);
         } else {
             // 重導致 loginform.jsp
             RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/JavaWeb0727/form/loginform.jsp");
+                    .getRequestDispatcher("/form/loginform.jsp");
             rd.forward(req, res);
         }
     }
