@@ -1,6 +1,7 @@
 package com.web.servlet.session;
 
 import java.io.IOException;
+import java.util.Random;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +17,8 @@ public class GetAuthSessionServlet extends HttpServlet {
         // 建立 Session 物件
         HttpSession session = req.getSession(true);
         resp.getWriter().print(session.getId());
+        String username = "Vincent";
+        
     }
     
 }

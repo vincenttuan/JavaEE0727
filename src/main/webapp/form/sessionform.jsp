@@ -14,6 +14,6 @@
                 <a href="/JavaWeb0727/servlet/session/cancel" target="myframe">取消</a>
             </fieldset>
         </form>
-        <iframe id="myframe" name="myframe" width="500" height="300"></iframe>
+        <iframe id="myframe" name="myframe" width="500" height="300" style="border: 0px"></iframe>
     </body>
 </html>
