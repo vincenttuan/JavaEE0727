@@ -13,7 +13,8 @@ public class LoginFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-        res.getWriter().print("LoginFilter OK");
+        //res.getWriter().print("LoginFilter OK");
+        chain.doFilter(req, res);
     }
     
 }
