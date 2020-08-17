@@ -17,13 +17,14 @@ public class GetAuthSessionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 建立 Session 物件
         HttpSession session = req.getSession(true);
-        resp.getWriter().print(session.getId());
+        session.setMaxInactiveInterval(5);
+        resp.getWriter().println(session.getId());
         
         Faker faker = new Faker();
         String username = faker.name().firstName();
         session.setAttribute("username", username);
         
-        resp.getWriter().print("Hello " + session.getAttribute("username"));
+        resp.getWriter().println("Hello " + session.getAttribute("username"));
         
     }
     
