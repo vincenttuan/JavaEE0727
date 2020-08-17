@@ -33,6 +33,11 @@ public class LoginFilter extends HttpFilter {
             // 重導致 loginform.jsp
             RequestDispatcher rd = getServletContext()
                     .getRequestDispatcher("/form/loginform.jsp");
+            if(remember != null) {
+                req.setAttribute("email", email);
+            } else {
+                req.setAttribute("email", "");
+            }
             rd.forward(req, res);
         }
     }

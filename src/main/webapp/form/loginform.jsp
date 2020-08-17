@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    String email = "";
+    String email = request.getAttribute("email")== null ? "" : request.getAttribute("email") + "";
     Cookie[] cookies = request.getCookies();
     if(cookies != null) {
         for(Cookie c : cookies) {
