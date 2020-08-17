@@ -32,7 +32,7 @@ public class LoginFilter extends HttpFilter {
         } else {
             // 重導致 loginform.jsp
             RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/error/loginerror.jsp");
+                    .getRequestDispatcher("/form/loginform.jsp");
             rd.forward(req, res);
         }
     }
