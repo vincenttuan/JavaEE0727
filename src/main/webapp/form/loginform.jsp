@@ -7,7 +7,7 @@
         <title>Login Form</title>
     </head>
     <body style="padding: 20px">
-        <form class="pure-form">
+        <form class="pure-form" method="post" action="/JavaWeb0727/servlet/result">
             <fieldset>
                 <legend>Login Form</legend>
                 <input type="email" placeholder="Email" /><p />
