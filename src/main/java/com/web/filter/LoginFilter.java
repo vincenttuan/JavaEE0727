@@ -20,11 +20,11 @@ public class LoginFilter extends HttpFilter {
         String remember = req.getParameter("remember");
         if(remember != null) {
             Cookie cookie = new Cookie("email", email); // 建立 Cookie 物件
-            cookie.setMaxAge(30); // 存續時間
+            cookie.setMaxAge(60*60); // 存續時間
             res.addCookie(cookie); // 加入到 response 物件
         } else {
             Cookie cookie = new Cookie("email", ""); // 建立 Cookie 物件
-            cookie.setMaxAge(1); // 存續時間
+            cookie.setMaxAge(60*60); // 存續時間
             res.addCookie(cookie);
         }
         if(email.contains("admin")) {
@@ -32,7 +32,7 @@ public class LoginFilter extends HttpFilter {
         } else {
             // 重導致 loginform.jsp
             RequestDispatcher rd = getServletContext()
-                    .getRequestDispatcher("/form/loginform.jsp");
+                    .getRequestDispatcher("/error/loginerror.jsp");
             rd.forward(req, res);
         }
     }
