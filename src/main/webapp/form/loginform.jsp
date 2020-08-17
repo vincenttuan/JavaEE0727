@@ -10,10 +10,10 @@
         <form class="pure-form" method="post" action="/JavaWeb0727/servlet/result">
             <fieldset>
                 <legend>Login Form</legend>
-                <input type="email" placeholder="Email" /><p />
-                <input type="password" placeholder="Password" /><p />
+                <input type="email" name="email" placeholder="Email" /><p />
+                <input type="password" name="password" placeholder="Password" /><p />
                 <label for="default-remember">
-                <input type="checkbox" id="default-remember" />&nbsp;Remember me</label><p />
+                <input type="checkbox" id="default-remember" name="remember" />&nbsp;Remember me</label><p />
                 <button type="submit" class="pure-button pure-button-primary">Sign in</button>
             </fieldset>
         </form>
