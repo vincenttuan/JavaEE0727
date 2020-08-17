@@ -1,5 +1,6 @@
 package com.web.servlet.session;
 
+import com.github.javafaker.Faker;
 import java.io.IOException;
 import java.util.Random;
 import javax.servlet.ServletException;
@@ -17,7 +18,12 @@ public class GetAuthSessionServlet extends HttpServlet {
         // 建立 Session 物件
         HttpSession session = req.getSession(true);
         resp.getWriter().print(session.getId());
-        String username = "Vincent";
+        
+        Faker faker = new Faker();
+        String username = faker.name().firstName();
+        session.setAttribute("username", username);
+        
+        resp.getWriter().print("Hello " + session.getAttribute("username"));
         
     }
     

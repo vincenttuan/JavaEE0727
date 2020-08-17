@@ -16,6 +16,7 @@ public class CancelAuthSessionServlet extends HttpServlet {
         // 建立 Session 物件
         HttpSession session = req.getSession(false);
         if(session != null) {
+            resp.getWriter().println("Hello " + session.getAttribute("username"));
             session.invalidate(); // 將 session 物件直接過期
             resp.getWriter().println("Cancel OK");
         } else {

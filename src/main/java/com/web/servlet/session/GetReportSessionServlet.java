@@ -16,6 +16,7 @@ public class GetReportSessionServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         resp.getWriter().println(session);
         if(session != null) {
+            resp.getWriter().println("Hello " + session.getAttribute("username"));
             resp.getWriter().println(session.getId());
             resp.getWriter().println("Report data ...");
         }
