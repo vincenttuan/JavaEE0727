@@ -17,7 +17,7 @@ public class GetAuthSessionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 建立 Session 物件
         HttpSession session = req.getSession(true);
-        session.setMaxInactiveInterval(5);
+        //session.setMaxInactiveInterval(5);
         resp.getWriter().println(session.getId());
         
         Faker faker = new Faker();
