@@ -19,6 +19,7 @@
                 <tr>
                     <th>region</th>
                     <th>country</th>
+                    <th>totalprofit</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                 <tr>
                     <td>${sales.region}</td>
                     <td>${sales.country}</td>
+                    <td align="right">${sales.totalprofit}</td>
                 </tr>
                 </c:forEach>
             </tbody>
