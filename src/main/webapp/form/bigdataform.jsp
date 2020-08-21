@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
@@ -14,6 +14,8 @@
                 <button type="submit" class="pure-button pure-button-primary">查詢</button>
             </fieldset>
         </form>
-        ${saleses}
+        <c:forEach var="sales" items="${saleses}">
+            ${sales}
+        </c:forEach>
     </body>
 </html>
