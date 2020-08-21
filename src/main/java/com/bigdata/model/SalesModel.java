@@ -2,7 +2,10 @@ package com.bigdata.model;
 
 import com.google.gson.Gson;
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import static java.util.stream.Collectors.toList;
 
 public class SalesModel {
 
@@ -22,6 +25,12 @@ public class SalesModel {
 
     public static Sales[] getSaleses() {
         return saleses;
+    }
+    
+    public static List<Sales> getSaleses(String countryName) {
+        return Arrays.stream(saleses)
+                .filter(s -> s.getCountry().contains(countryName))
+                .collect(toList());
     }
     
     
