@@ -16,9 +16,13 @@ public class BigDataServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Sales[] saleses = SalesModel.getSaleses();
+        String country = req.getParameter("country");
         // 設定 request attribute
-        req.setAttribute("saleses", Arrays.asList(saleses));
+        if(country == null || country.length() == 0)
+            req.setAttribute("saleses", SalesModel.getSaleses());
+        else
+            req.setAttribute("saleses", SalesModel.getSaleses(country));
+        
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/form/bigdataform.jsp");
         rd.forward(req, resp);
     }
