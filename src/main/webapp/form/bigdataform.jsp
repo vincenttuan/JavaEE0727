@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
     <head>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
@@ -10,7 +11,7 @@
         <form class="pure-form" method="post" action="/JavaWeb0727/servlet/bigdata">
             <fieldset>
                 <legend>BigData Sales</legend>
-                <input type="text" placeholder="" />
+                <input type="text" name="country" placeholder="請輸入 country 名稱" />
                 <button type="submit" class="pure-button pure-button-primary">查詢</button>
             </fieldset>
         </form>
@@ -27,7 +28,9 @@
                 <tr>
                     <td>${sales.region}</td>
                     <td>${sales.country}</td>
-                    <td align="right">${sales.totalprofit}</td>
+                    <td align="right">
+                        <fmt:formatNumber pattern="###,###" value="${sales.totalprofit}"></fmt:formatNumber>
+                    </td>
                 </tr>
                 </c:forEach>
             </tbody>
