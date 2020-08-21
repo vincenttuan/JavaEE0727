@@ -13,5 +13,6 @@
                 <button type="submit" class="pure-button pure-button-primary">查詢</button>
             </fieldset>
         </form>
+        ${saleses}
     </body>
 </html>
