@@ -6,7 +6,7 @@
         <title>Bigdata</title>
     </head>
     <body style="padding: 20px">
-        <form class="pure-form" mdthod="post" action="/JavaWeb0727/servlet/bigdata">
+        <form class="pure-form" method="post" action="/JavaWeb0727/servlet/bigdata">
             <fieldset>
                 <legend>BigData Sales</legend>
                 <input type="text" placeholder="" />
