@@ -14,8 +14,21 @@
                 <button type="submit" class="pure-button pure-button-primary">查詢</button>
             </fieldset>
         </form>
-        <c:forEach var="sales" items="${saleses}">
-            ${sales}
-        </c:forEach>
+        <table class="pure-table pure-table-bordered">
+            <thead>
+                <tr>
+                    <th>region</th>
+                    <th>country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="sales" items="${saleses}">
+                <tr>
+                    <td>${sales.region}</td>
+                    <td>${sales.country}</td>
+                </tr>
+                </c:forEach>
+            </tbody>
+        </table>
     </body>
 </html>
