@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bigdata</title>
     </head>
-    <body>
+    <body style="padding: 20px">
         <form class="pure-form" mdthod="post" action="">
             <fieldset>
                 <legend>BigData Sales</legend>
