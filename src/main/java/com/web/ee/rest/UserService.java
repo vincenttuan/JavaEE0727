@@ -7,6 +7,7 @@ import java.util.Optional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -49,5 +50,22 @@ public class UserService {
     public Message addUser(User user) {
         users.add(user);
         return new Message("add ok", 200);
+    }
+    
+    // http://localhost:8080/JavaEE0727/rest/user/1
+    @Path("{id}")
+    @PUT
+    @Produces("application/json")
+    @Consumes("application/json")
+    public Message updateUser(@PathParam("id") int id, User user) {
+        Optional<User> optUser = users.stream().filter(u -> u.getId() == id).findFirst();
+        if(optUser.isPresent()) {
+            User u = optUser.get();
+            u.setName(user.getName());
+            u.setAge(user.getAge());
+            return new Message("update ok", 201);
+        } else {
+            return new Message("update error", -1);
+        }
     }
 }
