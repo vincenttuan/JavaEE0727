@@ -22,6 +22,7 @@ public class UserService {
         users.add(new User(3, "hellen", 20));
     }
     
+    // http://localhost:8080/JavaEE0727/rest/user/all
     @Path("all")
     @GET
     @Produces("application/json")
@@ -29,6 +30,7 @@ public class UserService {
         return users;
     }
     
+    // http://localhost:8080/JavaEE0727/rest/user/1
     @Path("{id}")
     @GET
     @Produces("application/json")
@@ -39,7 +41,8 @@ public class UserService {
         return optUser.isPresent()?optUser.get():null;
     }
     
-    @Path("add")
+    // http://localhost:8080/JavaEE0727/rest/user/
+    @Path("/")
     @POST
     @Produces("application/json")
     @Consumes("application/json")
