@@ -29,7 +29,7 @@ public class UserService {
     // http://localhost:8080/JavaEE0727/rest/user/all
     @Path("all")
     @GET
-    @Produces("application/json")
+    @Produces("application/json;charset=UTF-8")
     public List<User> queryAll() {
         return users;
     }
@@ -37,7 +37,7 @@ public class UserService {
     // http://localhost:8080/JavaEE0727/rest/user/1
     @Path("{id}")
     @GET
-    @Produces("application/json")
+    @Produces("application/json;charset=UTF-8")
     public User getUser(@PathParam("id") int id) {
         Optional<User> optUser = users.stream()
                 .filter(u -> u.getId() == id)
@@ -48,8 +48,8 @@ public class UserService {
     // http://localhost:8080/JavaEE0727/rest/user/
     @Path("/")
     @POST
-    @Produces("application/json")
-    @Consumes("application/json")
+    @Produces("application/json;charset=UTF-8")
+    @Consumes("application/json;charset=UTF-8")
     public Message addUser(User user) {
         users.add(user);
         return new Message("add ok", 200);
@@ -58,8 +58,8 @@ public class UserService {
     // http://localhost:8080/JavaEE0727/rest/user/1
     @Path("{id}")
     @PUT
-    @Produces("application/json")
-    @Consumes("application/json")
+    @Produces("application/json;charset=UTF-8")
+    @Consumes("application/json;charset=UTF-8")
     public Message updateUser(@PathParam("id") int id, User user) {
         Optional<User> optUser = users.stream().filter(u -> u.getId() == id).findFirst();
         if(optUser.isPresent()) {
@@ -75,8 +75,8 @@ public class UserService {
     // http://localhost:8080/JavaEE0727/rest/user/1
     @Path("{id}")
     @DELETE
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @Consumes(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @Produces("application/json;charset=UTF-8")
+    @Consumes("application/json;charset=UTF-8")
     public Response deleteUser(@PathParam("id") int id) {
         boolean check = users.removeIf(u -> u.getId() == id);
         Response resp = Response.ok()
