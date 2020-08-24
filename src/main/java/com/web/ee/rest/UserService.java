@@ -34,7 +34,7 @@ public class UserService {
         return optUser.isPresent()?optUser.get():null;
     }
     
-    @Path("{id}")
+    @Path("/")
     @POST
     @Produces("application/json")
     @Consumes("application/json")
