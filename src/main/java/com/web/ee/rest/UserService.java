@@ -1,5 +1,6 @@
 package com.web.ee.rest;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +15,11 @@ import javax.ws.rs.Produces;
 public class UserService {
     private static List<User> users;
     static {
-        users = Arrays.asList(new User(1, "john", 18),new User(2, "mary", 19),new User(3, "hellen", 20));
+        //users = Arrays.asList(new User(1, "john", 18),new User(2, "mary", 19),new User(3, "hellen", 20));
+        users = new ArrayList<>();
+        users.add(new User(1, "john", 18));
+        users.add(new User(2, "mary", 19));
+        users.add(new User(3, "hellen", 20));
     }
     
     @Path("all")
@@ -34,12 +39,12 @@ public class UserService {
         return optUser.isPresent()?optUser.get():null;
     }
     
-    @Path("/")
+    @Path("add")
     @POST
     @Produces("application/json")
     @Consumes("application/json")
     public Message addUser(User user) {
         users.add(user);
-        return new Message("新增成功", 200);
+        return new Message("add ok", 200);
     }
 }
