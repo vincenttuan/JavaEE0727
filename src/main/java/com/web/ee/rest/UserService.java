@@ -12,6 +12,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 
 @Path("user")
 public class UserService {
@@ -75,9 +76,19 @@ public class UserService {
     @DELETE
     @Produces("application/json")
     @Consumes("application/json")
-    public Message deleteUser(@PathParam("id") int id) {
+    public Response deleteUser(@PathParam("id") int id) {
         boolean check = users.removeIf(u -> u.getId() == id);
-        return check ? new Message("delete ok", 202) : new Message("delete error", -2);
+        Response resp = Response.ok()
+                .header("status", 200)
+                .encoding("UTF-8")
+                .entity(new Message("刪除成功 ok", 202))
+                .build();
+        Response resp2 = Response.ok()
+                .header("status", 200)
+                .encoding("UTF-8")
+                .entity(new Message("刪除失敗 error", -2))
+                .build();
+        return check ? resp : resp2;
     }
     
 }
