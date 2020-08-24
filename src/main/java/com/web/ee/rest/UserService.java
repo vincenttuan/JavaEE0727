@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -68,4 +69,15 @@ public class UserService {
             return new Message("update error", -1);
         }
     }
+    
+    // http://localhost:8080/JavaEE0727/rest/user/1
+    @Path("{id}")
+    @DELETE
+    @Produces("application/json")
+    @Consumes("application/json")
+    public Message deleteUser(@PathParam("id") int id) {
+        boolean check = users.removeIf(u -> u.getId() == id);
+        return check ? new Message("delete ok", 202) : new Message("delete error", -2);
+    }
+    
 }
