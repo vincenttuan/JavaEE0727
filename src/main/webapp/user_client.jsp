@@ -5,6 +5,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User CRUD Page</title>
         <script>
+            function deleteUser(id) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("result").innerHTML = this.responseText;
+                    }
+                };
+                var url = "/JavaEE0727/rest/user/" + id;
+                xhttp.open("DELETE", url, true);
+                xhttp.send();
+            }
+            
             function updateUser() {
                 // 抓取表單資料
                 var id = document.getElementById("id").value;
@@ -70,7 +82,7 @@
                             cell1.innerHTML = jo[i].id;
                             cell2.innerHTML = jo[i].name;
                             cell3.innerHTML = jo[i].age;
-                            cell4.innerHTML = '<input type="button" value="刪除" onclick="deleleUser(' + id + ')">';
+                            cell4.innerHTML = '<input type="button" value="刪除" onclick="deleteUser(' + jo[i].id + ')">';
                         }
                     }
                 };
