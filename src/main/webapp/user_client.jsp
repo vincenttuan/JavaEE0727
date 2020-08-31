@@ -6,13 +6,19 @@
         <title>User CRUD Page</title>
         <script>
             function queryUsers() {
-                alert('queryUsers');
-                console.log('queryUsers');
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("result").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "/JavaEE0727/rest/user/all", true);
+                xhttp.send();
             }
         </script>
     </head>
     <body style="padding: 20px">
-        
+
         <form id="user_form" class="pure-form">
             <fieldset>
                 <legend>User CRUD</legend>
@@ -26,6 +32,7 @@
             </fieldset>
         </form>
 
+        <div id="result"></div>
 
     </body>
 </html>
