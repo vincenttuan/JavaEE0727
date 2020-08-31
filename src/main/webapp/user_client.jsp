@@ -58,7 +58,18 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
+                        var jo = JSON.parse(this.responseText);
                         document.getElementById("result").innerHTML = this.responseText;
+                        var table = document.getElementById("userTable");
+                        for(var i=0;i<jo.length;i++) {
+                            var row = table.insertRow(0);
+                            var cell1 = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+                            var cell3 = row.insertCell(2);
+                            cell1.innerHTML = jo[i].id;
+                            cell2.innerHTML = jo[i].name;
+                            cell3.innerHTML = jo[i].age;
+                        }
                     }
                 };
                 xhttp.open("GET", "/JavaEE0727/rest/user/all", true);
@@ -86,31 +97,13 @@
         <table class="pure-table pure-table-bordered">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Make</th>
-                    <th>Model</th>
-                    <th>Year</th>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>age</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Honda</td>
-                    <td>Accord</td>
-                    <td>2009</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Toyota</td>
-                    <td>Camry</td>
-                    <td>2012</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Hyundai</td>
-                    <td>Elantra</td>
-                    <td>2010</td>
-                </tr>
+            <tbody id="userTable" >
+                
             </tbody>
         </table>
     </body>
