@@ -5,6 +5,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User CRUD Page</title>
         <script>
+            function getUser(id) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var jo = JSON.parse(this.responseText);
+                        document.getElementById("id").value = jo.id;
+                        document.getElementById("name").value = jo.name;
+                        document.getElementById("age").value = jo.age;
+                    }
+                };
+                var url = "/JavaEE0727/rest/user/" + id;
+                xhttp.open("GET", url, true);
+                xhttp.send();
+                
+            }
+            
             function deleteUser(id) {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
