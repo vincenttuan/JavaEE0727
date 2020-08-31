@@ -6,16 +6,28 @@
         <title>User CRUD Page</title>
         <script>
             function addUser() {
+                // 抓取表單資料
                 var id   = document.getElementById("id").value;
                 var name = document.getElementById("name").value;
                 var age  = document.getElementById("age").value;
+                // 建立物件
                 var jsonObj = new Object();
                 jsonObj.id   = id;
                 jsonObj.name = name;
                 jsonObj.age  = age;
+                // 將物件轉 json 字串
                 var jsonText = JSON.stringify(jsonObj);
                 console.log(jsonObj);
                 console.log(jsonText);
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("result").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("POST", "/JavaEE0727/rest/user/", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send(jsonText);
             }
             function queryUsers() {
                 var xhttp = new XMLHttpRequest();
