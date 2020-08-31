@@ -12,9 +12,9 @@
                 var age  = document.getElementById("age").value;
                 // 建立物件
                 var jsonObj = new Object();
-                jsonObj.id   = id;
+                jsonObj.id   = id * 1;
                 jsonObj.name = name;
-                jsonObj.age  = age;
+                jsonObj.age  = age * 1;
                 // 將物件轉 json 字串
                 var jsonText = JSON.stringify(jsonObj);
                 console.log(jsonObj);
