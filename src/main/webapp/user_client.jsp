@@ -73,8 +73,8 @@
                         var jo = JSON.parse(this.responseText);
                         // 清空
                         var lens = document.getElementById("userTable").rows.length;
-                        for(int i=0;i<lens;i++) {
-                            document.getElementById("userTable").deleteRow(i);
+                        for(var i=0;i<lens;i++) {
+                            document.getElementById("userTable").deleteRow(0);
                         }
                         
                         document.getElementById("result").innerHTML = this.responseText;
