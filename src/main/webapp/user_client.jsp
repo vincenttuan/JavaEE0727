@@ -66,9 +66,11 @@
                             var cell1 = row.insertCell(0);
                             var cell2 = row.insertCell(1);
                             var cell3 = row.insertCell(2);
+                            var cell4 = row.insertCell(3);
                             cell1.innerHTML = jo[i].id;
                             cell2.innerHTML = jo[i].name;
                             cell3.innerHTML = jo[i].age;
+                            cell4.innerHTML = '<input type="button" value="刪除" onclick="deleleUser(' + id + ')">';
                         }
                     }
                 };
@@ -100,6 +102,7 @@
                     <th>id</th>
                     <th>name</th>
                     <th>age</th>
+                    <th>刪除</th>
                 </tr>
             </thead>
             <tbody id="userTable" >
