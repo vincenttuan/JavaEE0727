@@ -26,7 +26,7 @@
                     }
                 };
                 xhttp.open("POST", "/JavaEE0727/rest/user/", true);
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
                 xhttp.send(jsonText);
             }
             function queryUsers() {
