@@ -71,6 +71,12 @@
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         var jo = JSON.parse(this.responseText);
+                        // 清空
+                        var lens = document.getElementById("userTable").rows.length;
+                        for(int i=0;i<lens;i++) {
+                            document.getElementById("userTable").deleteRow(i);
+                        }
+                        
                         document.getElementById("result").innerHTML = this.responseText;
                         var table = document.getElementById("userTable");
                         for(var i=0;i<jo.length;i++) {
