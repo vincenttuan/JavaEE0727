@@ -26,6 +26,7 @@
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("result").innerHTML = this.responseText;
+                        queryUsers();
                     }
                 };
                 var url = "/JavaEE0727/rest/user/" + id;
@@ -51,6 +52,7 @@
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("result").innerHTML = this.responseText;
+                        queryUsers();
                     }
                 };
                 var url = "/JavaEE0727/rest/user/" + id;
@@ -76,6 +78,7 @@
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("result").innerHTML = this.responseText;
+                        queryUsers();
                     }
                 };
                 xhttp.open("POST", "/JavaEE0727/rest/user/", true);
