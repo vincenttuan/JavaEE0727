@@ -22,7 +22,7 @@
         <form id="user_form" class="pure-form">
             <fieldset>
                 <legend>User CRUD</legend>
-                ID : <input type="text" readonly /><p/>
+                ID : <input type="text" id="id" name="id" placeholder="請輸入ID" /><p/>
                 Name : <input type="text" id="name" name="name" placeholder="請輸入名字" /><p/>
                 Age : <input type="number" id="age" name="age" placeholder="請輸入年齡" /><p/>
                 <button type="button" id="add_button" class="pure-button pure-button-primary">新增</button>
