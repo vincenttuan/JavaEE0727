@@ -22,6 +22,9 @@
             }
             
             function deleteUser(id) {
+                if(!confirm("確定要刪除此筆資料 ?")) {
+                    return;
+                }
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
