@@ -5,6 +5,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User CRUD Page</title>
         <script>
+            function addUser() {
+                var id   = document.getElementById("id").value;
+                var name = document.getElementById("name").value;
+                var age  = document.getElementById("age").value;
+                var jsonObj = new Object();
+                jsonObj.id   = id;
+                jsonObj.name = name;
+                jsonObj.age  = age;
+                var jsonText = JSON.stringify(jsonObj);
+                console.log(jsonObj);
+                console.log(jsonText);
+            }
             function queryUsers() {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
@@ -25,7 +37,7 @@
                 ID : <input type="text" id="id" name="id" placeholder="請輸入ID" /><p/>
                 Name : <input type="text" id="name" name="name" placeholder="請輸入名字" /><p/>
                 Age : <input type="number" id="age" name="age" placeholder="請輸入年齡" /><p/>
-                <button type="button" id="add_button" class="pure-button pure-button-primary">新增</button>
+                <button type="button" id="add_button" onclick="addUser()" class="pure-button pure-button-primary">新增</button>
                 <button type="button" id="update_button" class="pure-button pure-button-primary">修改</button>
                 <button type="button" id="query_button" onclick="queryUsers()" class="pure-button pure-button-primary">查詢</button>
                 <button type="reset" class="pure-button pure-button-primary">清除</button>
