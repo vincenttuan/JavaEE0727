@@ -1,6 +1,7 @@
 package com.web.ee.jdbc.servlet;
 
 import com.web.ee.jdbc.bean.Book;
+import com.web.ee.jdbc.bean.ResultSetToBean;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -26,17 +27,7 @@ public class ReadBookServlet extends HttpServlet{
             ResultSet rs = stmt.executeQuery(sql);) {
             List<Book> books = new ArrayList<>();
             while (rs.next()) {                
-                int id = rs.getInt("id");
-                String title = rs.getString("title");
-                int price = rs.getInt("price");
-                int amount = rs.getInt("amount");
-                Timestamp ts = rs.getTimestamp("ts");
-                Book book = new Book();
-                book.setId(id);
-                book.setTitle(title);
-                book.setPrice(price);
-                book.setAmount(amount);
-                book.setTs(ts);
+                Book book = (Book)ResultSetToBean.copy(rs, Book.class);
                 books.add(book);
             }
             resp.getWriter().print(books);
