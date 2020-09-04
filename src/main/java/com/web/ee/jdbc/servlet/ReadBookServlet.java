@@ -42,6 +42,7 @@ public class ReadBookServlet extends HttpServlet{
             resp.getWriter().print(books);
             
         } catch (Exception e) {
+            e.printStackTrace(resp.getWriter());
         }
     }
     
