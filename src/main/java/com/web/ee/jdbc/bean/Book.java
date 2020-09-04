@@ -48,5 +48,10 @@ public class Book {
     public void setTs(Timestamp ts) {
         this.ts = ts;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" + "id=" + id + ", title=" + title + ", price=" + price + ", amount=" + amount + ", ts=" + ts + '}';
+    }
     
 }
