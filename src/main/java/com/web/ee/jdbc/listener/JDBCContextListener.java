@@ -18,6 +18,7 @@ public class JDBCContextListener implements ServletContextListener{
         Connection conn = manager.getConnection(jdbcUrl, username, password);
         // 將 conn 物件置入 ServletContext 中
         sce.getServletContext().setAttribute("conn", conn);
+        
     }
 
     @Override

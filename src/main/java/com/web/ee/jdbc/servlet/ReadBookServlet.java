@@ -30,7 +30,7 @@ public class ReadBookServlet extends HttpServlet{
                 String title = rs.getString("title");
                 int price = rs.getInt("price");
                 int amount = rs.getInt("amount");
-                Timestamp ts = rs.getTimestamp("id");
+                Timestamp ts = rs.getTimestamp("ts");
                 Book book = new Book();
                 book.setId(id);
                 book.setTitle(title);
