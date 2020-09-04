@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// 路徑 ex: http://localhost:8080/JavaEE0727/servlet/jdbc/update/book?title=R&price=110&amount=45&id=5
+// 路徑 ex: http://localhost:8080/JavaEE0727/servlet/jdbc/update/book?title=R&price=110&amount=45&id=4
 @WebServlet("/servlet/jdbc/update/book")
 public class UpdateBookServlet extends HttpServlet{
 
