@@ -28,12 +28,16 @@ public class UpdateStudent extends HttpServlet{
         student.setName("Mary");
         student.setAge(20);
         // 進行修改
-        EntityTransaction et = em.getTransaction();
-        et.begin();
-        em.merge(student);
-        et.commit();
-        em.close();
-        out.print("Update OK");
+        if(student == null) {
+            out.print("Update error");
+        } else {
+            EntityTransaction et = em.getTransaction();
+            et.begin();
+            em.merge(student);
+            et.commit();
+            em.close();
+            out.print("Update OK");
+        }
     }
     
 }
