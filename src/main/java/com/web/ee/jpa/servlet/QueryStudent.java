@@ -25,7 +25,10 @@ public class QueryStudent extends HttpServlet {
         // myjpa 是 unit name, 請參考 persistence.xml 中的設定
         EntityManagerFactory emf = (EntityManagerFactory)getServletContext().getAttribute("emf");
         EntityManager em = emf.createEntityManager();
-        List<Student> list = em.createNamedQuery("Student.findAll").getResultList();
+        //List<Student> list = em.createNamedQuery("Student.findAll").getResultList();
+        List<Student> list = em.createNamedQuery("Student.findByAge")
+                               .setParameter("age", 25)
+                               .getResultList();
         out.println(list);
     }
     
