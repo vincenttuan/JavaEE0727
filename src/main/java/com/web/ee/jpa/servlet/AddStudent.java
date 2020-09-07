@@ -26,7 +26,7 @@ public class AddStudent extends HttpServlet{
         PrintWriter out = resp.getWriter();
         // 取得 EntityManager
         // myjpa 是 unit name, 請參考 persistence.xml 中的設定
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myjpa");
+        EntityManagerFactory emf = (EntityManagerFactory)getServletContext().getAttribute("emf");
         EntityManager em = emf.createEntityManager();
         // 建立 Student 物件/Entity
         Student student = new Student();
@@ -38,7 +38,6 @@ public class AddStudent extends HttpServlet{
         em.persist(student);
         et.commit();
         em.close();
-        emf.close();
         out.print("Add OK");
     }
     
