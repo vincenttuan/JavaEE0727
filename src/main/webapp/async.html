@@ -8,7 +8,9 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState >= 3 && this.status == 200) {
-                        document.getElementById("result").innerHTML = this.responseText + '(' + this.readyState + ',' + this.status  + ')';
+                        var data = this.responseText + '(' + this.readyState + ',' + this.status  + ')';
+                        console.log(data);
+                        document.getElementById("result").innerHTML = data;
                     }
                 };
                 xhttp.open("GET", "/JavaEE0727/async/longjob", true);
