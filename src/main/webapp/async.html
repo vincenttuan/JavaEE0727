@@ -7,7 +7,7 @@
             function async() {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
-                    document.getElementById("result").innerHTML = this.responseText + '(' + this.readyState + ',' + this.states + ')';
+                    document.getElementById("result").innerHTML = this.responseText + '(' + this.readyState + ',' + this.status  + ')';
                 };
                 xhttp.open("GET", "/JavaEE0727/async/longjob", true);
                 xhttp.send();
