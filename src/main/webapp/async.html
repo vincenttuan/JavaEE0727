@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>AsyncServlet Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function async() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    document.getElementById("result").innerHTML = this.responseText + '(' + this.readyState + ',' + this.states + ')';
+                };
+                xhttp.open("GET", "/JavaEE0727/async.html", true);
+                xhttp.send();
+            }
+        </script>
+    </head>
+    <body>
+        <div>AsyncServlet Test</div>
+        <input type="button" value="Start" onclick="async()">
+        <div id="result"></div>
+    </body>
+</html>
