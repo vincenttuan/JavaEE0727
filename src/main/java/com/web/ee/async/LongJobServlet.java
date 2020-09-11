@@ -14,20 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 public class LongJobServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+    throws IOException, ServletException {
+        // 1.進入 Servlet 
+        resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.print("進入 Servlet 時間: " + new Date() + "<p />");
+        out.println("進入Servlet的時間：" + new Date() + ".<p>");
         out.flush();
-        // 商業邏輯
-        AsyncContext ctx = req.getAsyncContext();
-        LongJob job = new LongJob(ctx); // 建立 LongJob
-        new Thread(job).start(); // 使用一條執行緒去執行 LongJob
-        
-        out.print("離開 Servlet 時間: " + new Date() + "<p />");
-        
+        // 2.在子執行緒中執行任務調用，並由其負責輸出響應，主執行緒退出
+        AsyncContext ctx = req.startAsync();
+        new Thread(new LongJob(ctx)).start();
+ 
+        out.println("結束Servlet的時間：" + new Date() + ".<p>");
+        out.flush();
+        // 3.離開 Servlet 給其他請求連線使用
     }
     
 }
