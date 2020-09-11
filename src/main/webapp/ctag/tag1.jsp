@@ -23,6 +23,14 @@
         <my:mark search="s">
             she sell sea shell on the sea shore
         </my:mark>
-        
+        <hr>
+        <h1>
+            <my:switch conditionValue="1">
+                <my:case caseValue="1">男生</my:case>
+                <my:case caseValue="2">女生</my:case>
+            </my:switch>
+        </h1>
+        身分證字號 : <input type="text" name="id"> <my:required /> <p />
+        年齡 : <input type="text" name="age"> <p />
     </body>
 </html>
