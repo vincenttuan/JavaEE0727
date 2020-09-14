@@ -55,7 +55,7 @@
   <tag>
       <name>loop</name>
       <tag-class>com.web.ee.tag.LoopTag</tag-class>
-      <body-content>JSP</body-content>
+      <body-content>scriptless</body-content>
       <description>Print something</description>
       <attribute>
           <name>count</name>
