@@ -11,4 +11,16 @@
       <description>Print Hello and DateTime</description>
   </tag>
   
+  <tag>
+      <name>hellouser</name>
+      <tag-class>com.web.ee.tag.HelloUserTag</tag-class>
+      <body-content>empty</body-content>
+      <description>Print Hello and Name</description>
+      <attribute>
+          <name>name</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
 </taglib>
