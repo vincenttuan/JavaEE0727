@@ -23,4 +23,21 @@
       </attribute>
   </tag>
   
+  <tag>
+      <name>stock</name>
+      <tag-class>com.web.ee.tag.StockTag</tag-class>
+      <body-content>empty</body-content>
+      <description>Print Stock info...</description>
+      <attribute>
+          <name>symbol</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+      <attribute>
+          <name>qty</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
 </taglib>
