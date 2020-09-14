@@ -17,5 +17,10 @@
                 樂透彩開獎:
             </my:lotto>
         </h1>
+        <h1>
+            <my:loop count="10">
+                 中秋節
+            </my:loop>
+        </h1>
     </body>
 </html>
