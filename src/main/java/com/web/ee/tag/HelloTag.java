@@ -1,6 +1,11 @@
 package com.web.ee.tag;
 
+import java.io.IOException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.Tag;
 
@@ -19,22 +24,28 @@ public class HelloTag implements Tag {
 
     @Override
     public Tag getParent() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return parentTag;
     }
 
     @Override
     public int doStartTag() throws JspException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // 印出 Hello 與現在時間
+        JspWriter out = pageContext.getOut();
+        try {
+            out.print("Hello " + new Date());
+        } catch (IOException ex) {
+        }
+        return Tag.SKIP_BODY;
     }
 
     @Override
     public int doEndTag() throws JspException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Tag.EVAL_PAGE;
     }
 
     @Override
     public void release() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // 關閉資源的程序
     }
     
 }
