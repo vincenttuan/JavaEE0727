@@ -8,5 +8,6 @@
     </head>
     <body>
         <h1><my:hello /></h1>
+        <h1><my:hellouser name="John" /></h1>
     </body>
 </html>
