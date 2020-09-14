@@ -5,15 +5,16 @@ import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.Tag;
 
 public class HelloTag implements Tag {
-
+    private PageContext pageContext;
+    private Tag parentTag;
     @Override
     public void setPageContext(PageContext pc) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        pageContext = pc;
     }
 
     @Override
     public void setParent(Tag tag) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        parentTag = tag;
     }
 
     @Override
