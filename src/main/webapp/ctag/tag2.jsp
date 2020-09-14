@@ -12,6 +12,10 @@
         <h1><my:stock symbol="2330.TW" qty="2000" /></h1>
         <h1><my:stock symbol="USDTWD=x" /></h1>
         <h1><my:stock symbol="TWDUSD=x" qty="10000" /></h1>
-        
+        <h1>
+            <my:lotto amount="6">
+                樂透彩開獎:
+            </my:lotto>
+        </h1>
     </body>
 </html>

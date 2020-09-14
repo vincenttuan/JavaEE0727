@@ -34,6 +34,12 @@ public class LottoTag implements Tag {
 
     @Override
     public int doStartTag() throws JspException {
+        
+        return Tag.EVAL_BODY_INCLUDE;
+    }
+
+    @Override
+    public int doEndTag() throws JspException {
         Set<Integer> lotto = new LinkedHashSet<>();
         while(lotto.size() < amount) lotto.add(new Random().nextInt(49) + 1);
         
@@ -42,11 +48,7 @@ public class LottoTag implements Tag {
             out.print(lotto);
         } catch (Exception e) {
         }
-        return Tag.EVAL_BODY_INCLUDE;
-    }
-
-    @Override
-    public int doEndTag() throws JspException {
+        
         return Tag.EVAL_PAGE;
     }
 
