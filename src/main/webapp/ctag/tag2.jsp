@@ -52,6 +52,9 @@
                     2330.TW,2317.TW,USDTWD=x
                 </my:stockList>
             </tbody>
-        </table>        
+        </table>   
+        <h1>
+            <my:helloSimple msg="Java" />
+        </h1>
     </body>
 </html>

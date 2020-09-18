@@ -16,7 +16,6 @@ public class HelloSimpleTag extends SimpleTagSupport{
     public void doTag() throws JspException, IOException {
         JspWriter out = this.getJspContext().getOut();
         out.print("我是一個很簡單的 Tag, msg: " + msg);
-                
     }
     
 }

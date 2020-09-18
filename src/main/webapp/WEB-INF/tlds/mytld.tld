@@ -86,4 +86,15 @@
       <body-content>JSP</body-content>
   </tag>
   
+  <tag>
+      <name>helloSimple</name>
+      <tag-class>com.web.ee.tag.HelloSimpleTag</tag-class>
+      <body-content>empty</body-content>
+      <attribute>
+          <name>msg</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
 </taglib>
