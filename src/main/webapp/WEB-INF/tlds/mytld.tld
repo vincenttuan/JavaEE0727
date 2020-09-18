@@ -64,4 +64,15 @@
       </attribute>
   </tag>
   
+  <tag>
+      <name>search</name>
+      <tag-class>com.web.ee.tag.SearchTag</tag-class>
+      <body-content>JSP</body-content>
+      <attribute>
+          <name>key</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
 </taglib>
