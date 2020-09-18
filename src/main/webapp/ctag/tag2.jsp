@@ -56,5 +56,8 @@
         <h1>
             <my:helloSimple msg="Java" />
         </h1>
+        <h1>
+            <my:add x="10" y="20" z="30" />
+        </h1>
     </body>
 </html>
