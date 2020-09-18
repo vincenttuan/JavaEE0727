@@ -22,5 +22,11 @@
                  中秋節
             </my:loop>
         </h1>
+        <hr>
+        <h1>
+            <my:search key="s">
+                she sell sea shell on the sea shore
+            </my:search>
+        </h1>
     </body>
 </html>
