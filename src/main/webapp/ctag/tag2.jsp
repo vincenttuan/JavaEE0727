@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CustomerTag demo</title>
     </head>
-    <body>
+    <body style="padding: 20px">
         <h1><my:hello /></h1>
         <h1><my:hellouser name="John" /></h1>
         <h1><my:stock symbol="2330.TW" qty="2000" /></h1>
@@ -38,6 +39,19 @@
                 國防部說，共軍各項跨越海峽中線，進行軍事恫嚇的行為，已經嚴重破壞兩岸關係、衝擊區域和平穩定，並引發國際社會的不滿；國防部呼籲對岸應該要有所節制，珍惜和平，不要升高區域的情勢，破壞兩岸現狀。中共解放軍諸般蠻橫騷擾的行為，已經引起台灣人民的反感，也離台灣人民的民心越來越遠。國防部呼籲兩岸共同維護台海與印太區域的和平、穩定。
             </my:search>
         </h1>
-        
+        <hr>
+        <table class="pure-table pure-table-bordered">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <my:stockList>
+                    2330.TW,2317.TW,USDTWD=x
+                </my:stockList>
+            </tbody>
+        </table>        
     </body>
 </html>

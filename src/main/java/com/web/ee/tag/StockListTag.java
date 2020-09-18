@@ -32,9 +32,16 @@ public class StockListTag implements BodyTag {
         String[] symbols = content.split(",");
         try {
             for (String symbol : symbols) {
-                Stock stock = YahooFinance.get(symbol);
+                Stock stock = YahooFinance.get(symbol.trim());
                 double price = stock.getQuote().getPrice().doubleValue();
-                out.print(String.format("%s %.2f<br>", symbol, price));
+                out.print("<tr>");
+                out.print("<td>");
+                out.print(symbol);
+                out.print("</td>");
+                out.print("<td align='right'>");
+                out.print(String.format("$ %.2f", price));
+                out.print("</td>");
+                out.print("</tr>");
             }
         } catch (Exception e) {
         }

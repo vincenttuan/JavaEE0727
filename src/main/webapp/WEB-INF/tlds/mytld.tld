@@ -80,4 +80,10 @@
       </attribute>
   </tag>
   
+  <tag>
+      <name>stockList</name>
+      <tag-class>com.web.ee.tag.StockListTag</tag-class>
+      <body-content>JSP</body-content>
+  </tag>
+  
 </taglib>
