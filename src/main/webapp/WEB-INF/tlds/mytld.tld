@@ -73,6 +73,11 @@
           <required>true</required>
           <rtexprvalue>true</rtexprvalue>
       </attribute>
+      <attribute>
+          <name>key2</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
   </tag>
   
 </taglib>
