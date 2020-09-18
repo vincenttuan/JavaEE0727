@@ -13,7 +13,9 @@ public class AddTag extends SimpleTagSupport implements DynamicAttributes{
     @Override
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
-        out.print(map);
+        int sum = map.entrySet().stream().mapToInt(entry -> entry.getValue()).sum();
+        out.print(map + " = " + sum);
+        
     }
     
     @Override
