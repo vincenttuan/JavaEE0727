@@ -1,6 +1,7 @@
 package com.web.ee.tag;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.BodyContent;
 import javax.servlet.jsp.tagext.BodyTag;
@@ -37,7 +38,14 @@ public class SearchTag implements BodyTag {
 
     @Override
     public int doAfterBody() throws JspException {
-        
+        String content = bodyContent.getString();
+        String new_content = content.replaceAll(key, 
+                String.format("<font color=red><b>%s</b></font>", key));
+        JspWriter out = bodyContent.getEnclosingWriter();
+        try {
+            out.print(new_content);
+        } catch (Exception e) {
+        }
         return Tag.SKIP_BODY;
     }
 
