@@ -1,4 +1,11 @@
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
+<%@attribute name="title" required="true" rtexprvalue="true" %>
+<%@attribute name="task" required="true" rtexprvalue="true" %>
+<%@attribute name="work" required="true" rtexprvalue="true" %>
+<%@attribute name="eat" required="true" rtexprvalue="true" %>
+<%@attribute name="mobile" required="true" rtexprvalue="true" %>
+<%@attribute name="tv" required="true" rtexprvalue="true" %>
+<%@attribute name="sleep" required="true" rtexprvalue="true" %>
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -9,16 +16,16 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Task', '${task}'],
+          ['Work',     ${work}],
+          ['Eat',      ${eat}],
+          ['Mobile',  ${mobile}],
+          ['Watch TV', ${tv}],
+          ['Sleep',    ${sleep}]
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: '${title}'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
