@@ -10,8 +10,15 @@
             var ws = null;
             function onOpen() {
                 ws = new WebSocket(url);
-                ws.onopen = function(evt) {
+                ws.onopen = function(evt) { // Server 端的回應
                     result.insertAdjacentHTML("beforeend", '連入到 Server<br>');
+                };
+                ws.onclose = function(evt) { // Server 端的回應
+                    result.insertAdjacentHTML("beforeend", '關閉連線<br>');
+                    ws = null;
+                };
+                ws.onmessage = function(evt) { // Server 端的回應
+                    result.insertAdjacentHTML("beforeend", evt.data);
                 };
             }
             function onClose() {
@@ -19,10 +26,11 @@
                     alert('請按下 Open 鍵');
                     return;
                 }
-                ws.onclose = function(evt) {
-                    result.insertAdjacentHTML("beforeend", '關閉連線<br>');
-                    ws = null;
-                };
+                ws.close();
+            }
+            
+            function send() {
+                ws.send(message.value);
             }
         </script>
     </head>
@@ -30,10 +38,10 @@
         <form class="pure-form">
             <fieldset>
                 <legend>Hello Client</legend>
-                <input type="text" placeholder="請輸入字串" /><p/>
-                <button type="button" class="pure-button pure-button-primary">Open</button>
-                <button type="button" class="pure-button pure-button-primary">Send</button>
-                <button type="button" class="pure-button pure-button-primary">Close</button>
+                <input type="text" id="message" placeholder="請輸入字串" /><p/>
+                <button type="button" class="pure-button pure-button-primary" onclick="onOpen()">Open</button>
+                <button type="button" class="pure-button pure-button-primary" onclick="send()">Send</button>
+                <button type="button" class="pure-button pure-button-primary" onclick="onClose()">Close</button>
             </fieldset>
             <div id="result"></div>
         </form>
