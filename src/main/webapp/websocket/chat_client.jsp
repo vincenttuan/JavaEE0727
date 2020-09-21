@@ -9,7 +9,8 @@
             window.onload = function() {
                 var context_path = '/JavaEE0727';
                 var websocket_path = '/websocket/chat';
-                var url = 'ws://' + window.location.hostname + ':' + window.location.port + context_path + websocket_path;
+                var room_no = '/A01';
+                var url = 'ws://' + window.location.hostname + ':' + window.location.port + context_path + websocket_path + room_no;
                 var ws = new WebSocket(url);
                 ws.onopen = function(evt) { // 接收到 server 的回應
                     result.insertAdjacentHTML("afterbegin", '連入到 Server<br>');
