@@ -6,8 +6,9 @@ import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
+import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-import javax.ws.rs.PathParam;
+
 
 @ServerEndpoint("/websocket/chat/{room-no}")
 public class ChatServer {
