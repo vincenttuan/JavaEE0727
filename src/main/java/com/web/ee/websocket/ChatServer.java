@@ -40,7 +40,7 @@ public class ChatServer {
     private void sendAll(String message) {
         if(sessions != null) {
             for(Session session : sessions) {
-                session.getAsyncRemote().sendText(message + " <font color='#dddddd' size='1'>" + new Date() + "</font>");
+                session.getAsyncRemote().sendText(message + " <font color='#aaaaaa' size='1'>" + new Date() + "</font>");
             }
         }
     }
