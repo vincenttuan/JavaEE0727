@@ -13,6 +13,8 @@
                     eat="2" 
                     mobile="7" 
                     tv="1" 
-                    sleep="6" />
+                    sleep="6">
+            作者: 王小明
+        </my:pichart>
     </body>
 </html>

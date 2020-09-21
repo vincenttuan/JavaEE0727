@@ -6,6 +6,7 @@
 <%@attribute name="mobile" required="true" rtexprvalue="true" %>
 <%@attribute name="tv" required="true" rtexprvalue="true" %>
 <%@attribute name="sleep" required="true" rtexprvalue="true" %>
+<%@tag body-content="scriptless" %> <!-- scriptless(預設)、empty、tagdependent -->
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -36,6 +37,7 @@
     </script>
   </head>
   <body>
+      <h1><jsp:doBody /></h1>  
     <div id="piechart" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
