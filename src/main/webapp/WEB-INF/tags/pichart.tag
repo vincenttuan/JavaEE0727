@@ -17,11 +17,11 @@
 
         var data = google.visualization.arrayToDataTable([
           ['Task', '${task}'],
-          ['Work',     ${work}],
-          ['Eat',      ${eat}],
-          ['Mobile',  ${mobile}],
-          ['Watch TV', ${tv}],
-          ['Sleep',    ${sleep}]
+          ['工作',     ${work}],
+          ['飲食',      ${eat}],
+          ['手機',  ${mobile}],
+          ['電視', ${tv}],
+          ['睡覺',    ${sleep}]
         ]);
 
         var options = {

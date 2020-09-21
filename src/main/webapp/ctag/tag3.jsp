@@ -7,6 +7,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <my:pichart />
+        <my:pichart title="得意的一天" 
+                    task="花費時數" 
+                    work="8" 
+                    eat="2" 
+                    mobile="7" 
+                    tv="1" 
+                    sleep="6" />
     </body>
 </html>
