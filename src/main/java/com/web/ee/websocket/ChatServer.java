@@ -10,7 +10,7 @@ import javax.websocket.server.ServerEndpoint;
 
 @ServerEndpoint("/websocket/chat")
 public class ChatServer {
-    private CopyOnWriteArraySet<Session> sessions;
+    private static CopyOnWriteArraySet<Session> sessions;
     @OnOpen
     public void onOpen(Session session) {
         System.out.println("session id: " + session.getId() + " 連入");
