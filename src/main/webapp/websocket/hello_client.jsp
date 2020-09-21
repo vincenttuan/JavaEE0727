@@ -18,7 +18,7 @@
                     ws = null;
                 };
                 ws.onmessage = function(evt) { // Server 端的回應
-                    result.insertAdjacentHTML("beforeend", evt.data);
+                    result.insertAdjacentHTML("beforeend", evt.data + '<br>');
                 };
             }
             function onClose() {
