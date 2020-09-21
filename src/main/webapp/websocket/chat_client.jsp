@@ -15,7 +15,7 @@
                     result.insertAdjacentHTML("beforeend", '連入到 Server<br>');
                 };
                 ws.onmessage = function(evt) { // 接收到 server 的回應
-                    result.insertAdjacentHTML("beforeend", evt.data() + '<br>');
+                    result.insertAdjacentHTML("beforeend", evt.data + '<br>');
                 };
                 ws.onclose = function(evt) { // 接收到 server 的回應
                     result.insertAdjacentHTML("beforeend", '關閉連線, 若要重新連線請重新整理網頁 !<br>');
