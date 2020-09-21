@@ -11,16 +11,24 @@
                 var websocket_path = '/websocket/chat';
                 var url = 'ws://' + window.location.hostname + ':' + window.location.port + context_path + websocket_path;
                 var ws = new WebSocket(url);
-                ws.onopen = function(evt) {
+                ws.onopen = function(evt) { // 接收到 server 的回應
                     result.insertAdjacentHTML("beforeend", '連入到 Server<br>');
                 };
-                ws.onmessage = function(evt) {
+                ws.onmessage = function(evt) { // 接收到 server 的回應
                     result.insertAdjacentHTML("beforeend", evt.data() + '<br>');
                 };
-                ws.onclose = function(evt) {
+                ws.onclose = function(evt) { // 接收到 server 的回應
                     result.insertAdjacentHTML("beforeend", '關閉連線, 若要重新連線請重新整理網頁 !<br>');
                     ws = null;
+                    sendBtn.disabled = true;
+                    closeBtn.disabled = true;
                 };
+                sendBtn.addEventListener("click", function() { // Client 觸發的事件
+                    ws.send(message.value); // 傳送資料
+                });
+                closeBtn.addEventListener("click", function() { // Client 觸發的事件
+                    ws.close() // 關閉資料
+                });
             };
         </script>
     </head>
@@ -29,8 +37,8 @@
             <fieldset>
                 <legend>聊天室 (Chat)</legend>
                 <input type="text" id="message" placeholder="請輸入字串" /><p/>
-                <button type="button" class="pure-button pure-button-primary">Send</button>
-                <button type="button" class="pure-button pure-button-primary">Close</button>
+                <button type="button" id="sendBtn" class="pure-button pure-button-primary">Send</button>
+                <button type="button" id="closeBtn" class="pure-button pure-button-primary">Close</button>
             </fieldset>
             <div id="result"></div>
         </form>
