@@ -1,5 +1,6 @@
 package com.web.ee.websocket;
 
+import java.util.Date;
 import java.util.concurrent.CopyOnWriteArraySet;
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
@@ -39,7 +40,7 @@ public class ChatServer {
     private void sendAll(String message) {
         if(sessions != null) {
             for(Session session : sessions) {
-                session.getAsyncRemote().sendText(message);
+                session.getAsyncRemote().sendText(message + " <font color='#dddddd' size='1'>" + new Date() + "</font>");
             }
         }
     }

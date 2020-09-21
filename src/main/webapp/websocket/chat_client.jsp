@@ -12,13 +12,13 @@
                 var url = 'ws://' + window.location.hostname + ':' + window.location.port + context_path + websocket_path;
                 var ws = new WebSocket(url);
                 ws.onopen = function(evt) { // 接收到 server 的回應
-                    result.insertAdjacentHTML("beforeend", '連入到 Server<br>');
+                    result.insertAdjacentHTML("afterbegin", '連入到 Server<br>');
                 };
                 ws.onmessage = function(evt) { // 接收到 server 的回應
-                    result.insertAdjacentHTML("beforeend", evt.data + '<br>');
+                    result.insertAdjacentHTML("afterbegin", evt.data + '<br>');
                 };
                 ws.onclose = function(evt) { // 接收到 server 的回應
-                    result.insertAdjacentHTML("beforeend", '關閉連線, 若要重新連線請重新整理網頁 !<br>');
+                    result.insertAdjacentHTML("afterbegin", '關閉連線, 若要重新連線請重新整理網頁 !<br>');
                     ws = null;
                     sendBtn.disabled = true;
                     closeBtn.disabled = true;
