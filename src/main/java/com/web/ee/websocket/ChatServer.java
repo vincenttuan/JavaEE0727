@@ -7,18 +7,19 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
+import javax.ws.rs.PathParam;
 
-@ServerEndpoint("/websocket/chat")
+@ServerEndpoint("/websocket/chat/{room-no}")
 public class ChatServer {
     private static CopyOnWriteArraySet<Session> sessions;
     @OnOpen
-    public void onOpen(Session session) {
-        System.out.println("session id: " + session.getId() + " 連入");
+    public void onOpen(Session session, @PathParam("room-no") String roomNo) {
+        System.out.println("session id: " + session.getId() + " 進入 roomNo:  " + roomNo);
         if(sessions == null) {
             sessions = new CopyOnWriteArraySet<>();
         }
         sessions.add(session);
-        sendAll("歡迎 " + session.getId() + "加入");
+        sendAll("歡迎 " + session.getId() + " 進入 roomNo:  " + roomNo);
     }
     
     @OnMessage
