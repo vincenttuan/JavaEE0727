@@ -25,7 +25,8 @@
         ]);
 
         var options = {
-          title: '${title}'
+          title: '${title}',
+          is3D: true
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
